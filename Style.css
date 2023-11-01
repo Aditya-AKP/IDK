@@ -33,11 +33,11 @@ background: linear-gradient(120deg, rgba(255, 89, 0, 0.813) 20%, rgba(255,255,25
 
 /* text */
   .text {
-    color: rgb(175, 228, 255);
+    color: rgb(255, 255, 255);
     background-color: #0f0f0f35;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-decoration-color: rgb(207, 125, 125);
-    font-size: 50px;
+    font-size: 40px;
     position: absolute;
    top: auto;
    left: auto;
