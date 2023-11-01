@@ -36,12 +36,29 @@
 
           </div>
           <div class="swiper-slide">
+
+            <div class="text">
+
+              <h1>Dropout Students Survey</h1>
+              <h3>Platform that provides precise analysis of dropout students.</h3>
+            </div>
             <img src="images/image1.jpg" alt="img1">
           </div>
           <div class="swiper-slide">
+
+            <div class="text">
+
+              <h1>Dropout Students Survey</h1>
+              <h3>Platform that provides precise analysis of dropout students.</h3>
+            </div>
             <img src="images/image2.jpg" alt="img2">
           </div>
           <div class="swiper-slide">
+            <div class="text">
+
+              <h1>Dropout Students Survey</h1>
+              <h3>Platform that provides precise analysis of dropout students.</h3>
+            </div>
             <img src="images/image3.jpg" alt="img3">
           </div>
 
@@ -101,23 +118,25 @@
             document.getElementById("myForm").style.display = "none";
           }
 
-          let swiper = new Swiper(".mySwiper", {
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: {
+        let swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
               delay: 2500,
               disableOnInteraction: false,
             },
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-            grabCursor: true,
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-          });
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      grabCursor: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
         </script>
 
       </div>
