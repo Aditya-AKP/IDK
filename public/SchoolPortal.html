@@ -5,6 +5,7 @@
   <title>SchoolPortal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="template.css">
+  <!-- css -->
   <style>
     .portal {
       display: flex;
@@ -64,18 +65,14 @@
       box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
     }
   </style>
+
+<script src="/header.js" type="text/javascript" defer></script>
+<script src="/footer.js" type="text/javascript" defer></script>
+
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="header">
-    <a href="#" class="logo">EduDrop</a>
-    <nav class="nav-items">
-      <a href="/index.html">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+  <header-component></header-component>
 
 
   <main class="main">
@@ -112,24 +109,7 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="copy">&copy; 2023 Phantoms</div>
-    <div class="bottom-links">
-      <div class="links">
-        <span>More Info</span>
-        <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </div>
-      <div class="links">
-        <span>Social Links</span>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </footer>
+  <footer-component></footer-component>
 </body>
 
 </html>
