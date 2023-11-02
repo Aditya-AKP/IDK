@@ -1,16 +1,46 @@
 const express=require("express");
-const app=express();
 const path=require("path")
 
+const school=require("./server/school");
+require("./server/config");
+const app=express();
 
-app.use(express.static(path.resolve('./public')));
-//app.use(express.urlencoded({ extended: true }));
+const publicPath=path.join(__dirname,'public');
+
+
+app.use(express.static(__dirname));
 app.use(express.json());
 app.set("view engine", "ejs");
 
+app.get("/",(req,res)=>{
+    res.render(__dirname+'/index');
+})
 
-app.get("/l",(req,res)=>{
-    res.send("index.html");
+app.get("/viewstudentdetails",async(req,res)=>{
+    const schol = await school.find({});
+  res.render(__dirname+"/public/ViewStudentDetails", {
+    schol: schol,
+  });
 });
 
-app.listen(process.env.PORT || 3000);
+app.post("/schoollogin",async(req,res)=>{
+    console.log("Enter");
+    let schools=new school({
+        "SchoolID":21,
+        "SchoolName":"String",
+        "State":"String",
+        "District":"String",
+        "Block":"String",
+        "password":123
+    });
+    let result=await schools.save();
+    console.log("Middle");
+    res.render(__dirname+'/public/SchoolPortal');
+    console.log("Exit");
+});
+
+app.get("*",(req,res)=>{
+  res.render(__dirname+"/public/Error404");
+})
+
+app.listen(3000);
