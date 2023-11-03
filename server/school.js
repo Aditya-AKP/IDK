@@ -6,7 +6,7 @@ const schoolschema=new mongoose.Schema({
     State:String,
     District:String,
     Block:String,
-    password:Number},
+    password:String},
     {
         collection:'school',
         versionKey: false

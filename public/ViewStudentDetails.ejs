@@ -13,11 +13,19 @@
 
   <main class="main">
     <div class="main-text">
-      <% schol.map((item,number)=>{%>
-        <h2><%= item.SchoolName %></h2>
-        <% }) %>
+      <h2>School Details</h2>
         <br>
-        <p>Platform that provides precise analysis of dropout students.</p>
+        <p>Test data only</p>
+      <table>
+        <tr><th>School Name</th><th>School ID</th><th>District</th></tr>
+        <% for (var i = 0; i < schol.length; i++) { %>
+          <tr>
+            <td><%= schol[i].SchoolName %></td>
+            <td><%= schol[i].SchoolID %></td>
+            <td><%= schol[i].District %></td>
+          </tr>    
+         <% } %>
+      </table>
     </div>
   </main>
 
