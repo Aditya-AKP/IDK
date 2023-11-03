@@ -46,7 +46,7 @@ class Footer extends HTMLElement {
     <div class="bottom-links">
       <div class="links">
         <span>More Info</span>
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
       </div>
