@@ -117,6 +117,15 @@
           function closeForm() {
             document.getElementById("myForm").style.display = "none";
           }
+          const menu=document.getElementById("myForm")
+            window.onclick=(event)=> {
+              if(!event.target.matches('.button')){
+                if(menu.style.display=="block"){
+                  menu.style.display="none";
+                }
+              }
+            }
+            menu.addEventListener('click',event=> event.stopPropagation());
 
           let swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
