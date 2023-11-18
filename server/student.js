@@ -11,7 +11,8 @@ const studentschema=new mongoose.Schema({
     Caste:String,
     State:String,
     District:String,
-    Pin:Number},
+    Pin:Number,
+    updated:Boolean},
     {
         collection:'student',
         versionKey: false

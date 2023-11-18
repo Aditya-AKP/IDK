@@ -1,0 +1,68 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="/public/template.css">
+  <script src="/header.js" type="text/javascript" defer></script>
+  <script src="/footer.js" type="text/javascript" defer></script>
+</head>
+<body>
+  <header-component></header-component>
+
+
+  <main class="main">
+    <div class="main-text">
+      <% if(ans.user=="admin") { %>
+        <form action="/UploadDropoutData" method="post">
+          Session: <input type="text" name="session" required/>
+          <input type="text" name="Total" hidden value="<%= ans.TStu %>"/>
+          <input type="text" name="Dropout" hidden value="<%= ans.DStu %>" />
+          <input type="submit" value="Click to upload"/>
+        </form>
+        <% } %>
+        <p><a href="/DropoutDataset">Click</a> here to get all data of Dropout Students</p>
+      <h1>Current Dropout</h1>
+        <p>Total Student admitted : <%= ans.TStu %></p>
+        <br>
+        <p>Number of Dropout Student : <%= ans.DStu %></p>
+        <br>
+        <p>Dropout percentage is <%= (ans.DStu*100)/ans.TStu %> %</p>
+        <br>
+        <!-- State Dropout -->
+        <p>Number of Dropout Student across the States:</p>
+        <ul>
+          <% for (var i = 0; i < ans.state.length; i++) { %>
+            <li><%= ans.state[i].name %> : <%= ans.state[i].count%></li>
+            <% } %>
+        </ul>
+        <br>
+        <!-- Class Dropout -->
+        <p>Number of Dropout Student across the Classes</p>
+        <ul>
+          <% for (var i = 0; i < ans.kaksha.length; i++) { %>
+            <li><%= ans.kaksha[i].name %> : <%= ans.kaksha[i].count%></li>
+            <% } %>
+        </ul>
+        <br>
+        <!-- Gender Dropout -->
+        <p>Number of Dropout Student across the Gender</p>
+        <ul>
+          <% for (var i = 0; i < ans.gender.length; i++) { %>
+            <li><%= ans.gender[i].name %> : <%= ans.gender[i].count%></li>
+            <% } %>
+        </ul>
+        <br>
+        <!-- Caste Dropout -->
+        <p>Number of Dropout Student across the Caste</p>
+        <ul>
+          <% for (var i = 0; i < ans.caste.length; i++) { %>
+            <li><%= ans.caste[i].name %> : <%= ans.caste[i].count%></li>
+            <% } %>
+        </ul>
+    </div>
+  </main>
+
+</body>
+
+</html>

@@ -37,8 +37,8 @@ class Header extends HTMLElement {
         <a href="/" class="logo">EduDrop</a>
         <nav class="nav-items">
           <a href="/">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </nav>
       </header>
       `;
