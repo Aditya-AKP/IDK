@@ -13,9 +13,14 @@
 
   <main class="main">
     <div class="main-text">
-        <h2><%= ans.title %></h2>
-        <br>
-        <p><%= ans.body %></p>
+        <h1>Choose the Session</h1>
+        <% for(var i=0;i<ans.length;i++) { %>
+            <form action="/ViewDropout" method="post">
+                <input type="text" name="Session" value="<%= ans[i].Session %>" hidden>
+                <input type="submit" value="<%= ans[i].Session %>">
+            </form>
+            <p></p>
+        <% } %>
     </div>
   </main>
 

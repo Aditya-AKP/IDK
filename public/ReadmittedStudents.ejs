@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/public/template.css">
+    <script src="/header.js" type="text/javascript" defer></script>
+    <script src="/footer.js" type="text/javascript" defer></script>
+    <script type="text/javascript">  
+        function selects(){  
+            var ele=document.getElementsByName('readmit');  
+            for(var i=0; i<ele.length; i++){  
+                if(ele[i].type=='checkbox')  
+                    ele[i].checked=true;  
+            }  
+        }             
+    </script> 
+</head>
+
+<body>
+    <header-component></header-component>
+
+
+    <main class="main">
+        <div class="main-text">
+            <h2>Students admitted previous year</h2>
+            <br>
+            <p>check the box who has readmitted</p>
+            <div class="container pt-3">
+                <form action="/readmittedstudentupdate" method="post">
+                    <button type="submit" >Update</button>
+                    <input type="button" onclick='selects()' value="Select All"/>  
+
+                <table border="2">
+                    <thead>
+                        <tr>
+                            <th>Re-admitted</th>
+                            <th>Student Name</th>
+                            <th>Father Name</th>
+                            <th>Class</th>
+                            <th>Aadhar</th>
+                            <th>Gender</th>
+                            <th>Caste</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% for (var i=0; i < schol.length; i++) { %>
+                            <tr>
+                                <td><input type="checkbox" name="readmit" value="<%= schol[i].AadharNo %>"></td>
+                                <td><%= schol[i].Name %></td>
+                                <td><%= schol[i].FatherName %></td>
+                                <td><%= schol[i].Class %></td>
+                                <td><%= schol[i].AadharNo %></td>
+                                <td><%= schol[i].Gender %></td>
+                                <td><%= schol[i].Caste %></td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </form>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+
+</html>

@@ -42,19 +42,19 @@ class Footer extends HTMLElement {
           }
         </style>
         <footer class="footer">
-    <div class="copy">&copy; 2023 Phantoms</div>
+    <div class="copy">&copy; 2023 EduDrop</div>
     <div class="bottom-links">
       <div class="links">
         <span>More Info</span>
         <a href="/">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
       </div>
       <div class="links">
         <span>Social Links</span>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/login/"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </footer>
