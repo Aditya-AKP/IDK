@@ -2,9 +2,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dropout Student Details</title>
+  <title>Student Details</title>
   <link rel="icon" type="image/png" href="/images/edudrop.png">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -18,42 +17,32 @@
 
   <main class="main">
     <div class="main-text">
-      <h2>Students Details</h2>
+      <h2>School Details</h2>
         <div class="container pt-3">
-        <table border="1" >
+        <table border="1">
           <thead>
         <tr>
-          <th>Student Name</th>
-          <th>Father Name</th>
-          <th>Class</th>
-          <th>Aadhar</th>
-          <th>Gender</th>
-          <th>D.O.B</th>
-          <th>Caste</th>
+          <th>School ID</th>
+          <th>School Name</th>
           <th>State</th>
           <th>District</th>
-          <th>Pin No</th>
+          <th>Block</th>
         </tr>
       </thead>
       <tbody>
 
         <% for (var i = 0; i < schol.length; i++) { %>
           <tr>
-            <td><%= schol[i].Name %></td>
-            <td><%= schol[i].FatherName %></td>
-            <td><%= schol[i].Class %></td>
-            <td><%= schol[i].AadharNo %></td>
-            <td><%= schol[i].Gender %></td>
-            <% let datestr =new Date(schol[i].Dob)%>
-            <td><%= datestr.toLocaleDateString() %></td>
-            <td><%= schol[i].Caste %></td>
-            <td><%= schol[i].State %></td>
-            <td><%= schol[i].District %></td>
-            <td><%= schol[i].Pin %></td>
+            <td><%= schol[i].SchoolID %></td>
+            <td><%= schol[i].SchoolName.toUpperCase() %></td>
+            <td><%= schol[i].State.toUpperCase() %></td>
+            <td><%= schol[i].District.toUpperCase() %></td>
+            <td><%= schol[i].Block.toUpperCase() %></td>
           </tr>    
          <% } %>
         </tbody>
       </table>
+      <br>
       </div>
     </div>
   </main>
