@@ -1,7 +1,8 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Template</title>
+  <title>Current Dropout</title>
+  <link rel="icon" type="image/png" href="/images/edudrop.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="/public/template.css">
   <script src="/header.js" type="text/javascript" defer></script>
@@ -13,6 +14,7 @@
 
   <main class="main">
     <div class="main-text">
+      <br>
       <% if(ans.user=="admin") { %>
         <form action="/UploadDropoutData" method="post">
           Session: <input type="text" name="session" required/>
@@ -29,28 +31,11 @@
         <br>
         <p>Dropout percentage is <%= (ans.DStu*100)/ans.TStu %> %</p>
         <br>
-        <!-- State Dropout -->
-        <p>Number of Dropout Student across the States:</p>
-        <ul>
-          <% for (var i = 0; i < ans.state.length; i++) { %>
-            <li><%= ans.state[i].name %> : <%= ans.state[i].count%></li>
-            <% } %>
-        </ul>
-        <br>
-        <!-- Class Dropout -->
-        <p>Number of Dropout Student across the Classes</p>
-        <ul>
-          <% for (var i = 0; i < ans.kaksha.length; i++) { %>
-            <li><%= ans.kaksha[i].name %> : <%= ans.kaksha[i].count%></li>
-            <% } %>
-        </ul>
-        <br>
         <!-- Gender Dropout -->
         <p>Number of Dropout Student across the Gender</p>
         <ul>
-          <% for (var i = 0; i < ans.gender.length; i++) { %>
-            <li><%= ans.gender[i].name %> : <%= ans.gender[i].count%></li>
-            <% } %>
+          <li>MALE : <%= ans.gender[0].count%></li>
+          <li>FEMALE : <%= ans.gender[1].count%></li>
         </ul>
         <br>
         <!-- Caste Dropout -->
@@ -60,9 +45,58 @@
             <li><%= ans.caste[i].name %> : <%= ans.caste[i].count%></li>
             <% } %>
         </ul>
+
+        <!-- School Dropout -->
+
+        <table border="1">
+          <tr>
+            <th rowspan="2">State Name</th>
+            <th colspan="2" rowspan="2">Gender</th>
+            <th colspan="9">Class</th>
+            <th rowspan="2">Total</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+          </tr>
+          <% for (var i = 0; i < ans.state.length; i++) { %>
+          <tr>
+            <td rowspan="2"><%= ans.state[i].name %></td>
+            <td>MALE</td>
+            <td><%= ans.state[i].male%></td>
+            <% for (var j=0;j<9;j++) { %>
+              <td><%= ans.state[i].kaksha[j] %></td>
+              <% } %>
+            <td rowspan="2"><%= ans.state[i].male + ans.state[i].female%></td>
+          </tr>
+          <tr>
+            <td>FEMALE</td>
+            <td><%= ans.state[i].female%></td>
+            <% for (var j=9;j<18;j++) { %>
+              <td><%= ans.state[i].kaksha[j] %></td>
+              <% } %>
+          </tr>
+          <% } %>
+          <tr>
+            <td colspan="3">Total</td>
+            <% for (var i = 0; i < ans.kaksha.length; i++) { %>
+              <td><%= ans.kaksha[i].count%></td>
+              <% } %>
+              <td><%= ans.DStu %></td>
+          </tr>
+        </table>
+        <br>
+        
     </div>
   </main>
-
+  <footer-component></footer-component>
 </body>
 
 </html>

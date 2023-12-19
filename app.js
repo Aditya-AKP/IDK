@@ -37,9 +37,24 @@ app.get("/", (req, res) => {
   res.render(__dirname + '/index');
 })
 
+app.get("/contact",(req,res)=>{
+  res.render(__dirname + '/public/ContactPage');
+})
+
+app.get("/about",(req,res)=>{
+  res.render(__dirname + '/public/AboutPage');
+})
+
 app.get("/viewstudentdetails", async (req, res) => {
-  const schol = await student.find({ "SchoolID": req.session.userid }).sort({ AadharNo: 1 });
+  const schol = await student.find({ "SchoolID": req.session.userid }).sort({ Name:1, AadharNo: 1 });
   res.render(__dirname + "/public/ViewStudentDetails", {
+    schol: schol,
+  });
+});
+
+app.get("/ViewSchoolDetails", async (req, res) => {
+  const schol = await school.find().sort({SchoolID:1});
+  res.render(__dirname + "/public/SchoolDetails", {
     schol: schol,
   });
 });
@@ -55,12 +70,15 @@ app.get("/StudentReadmissions", async (req, res) => {
   });
 });
 
-app.get("/SchoolRegistration", (req, res) => {
-  res.render(__dirname + '/public/SchoolRegistration');
-})
+app.get("/SchoolRegistration", async(req, res) => {
+  const temp=await school.find().count();
+  res.render(__dirname + "/public/SchoolRegistration",
+  {t:temp+1,}
+  );
+});
 
 app.get("/currentdropout", async (req, res) => {
-  const TotalDropoutStu = await student.find({ "updated": false })
+  const TotalDropoutStu = await student.find({ "updated": false }).sort({"Class":1,"State":1,"Caste":1});
   const StudentNo = await student.countDocuments();
   let temp = []
   let state = []
@@ -73,14 +91,37 @@ app.get("/currentdropout", async (req, res) => {
       temp.push(TotalDropoutStu[i].State);
       var _data = {};
       _data.name = TotalDropoutStu[i].State;
-      _data.count = 1;
+      _data.kaksha=Array(18).fill(0);
+      if(TotalDropoutStu[i].Gender=="M"){
+        _data.male=1;
+        _data.female=0;
+        _data.kaksha[TotalDropoutStu[i].Class-1]=1;
+      }else{
+        _data.male=0;
+        _data.female=1;
+        _data.kaksha[TotalDropoutStu[i].Class+8]=1;
+      }
+      
 
       state.push(_data);
     } else {
       for (var j = 0; j < state.length; j++) {
         if (state[j].name === TotalDropoutStu[i].State) {
-          let _x = parseInt(state[j].count) + 1;
-          state[j].count = _x;
+          let _y=parseInt(state[j].male);
+          let _z=parseInt(state[j].female);
+          let _x;
+          if(TotalDropoutStu[i].Gender=="M"){
+            _y+=1;
+            state[j].kaksha[TotalDropoutStu[i].Class-1]+=1
+          }else{
+            _z+=1;
+            state[j].kaksha[TotalDropoutStu[i].Class+8]+=1
+
+          }
+          
+          
+          state[j].male=_y;
+          state[j].female=_z;
         }
       }
     }

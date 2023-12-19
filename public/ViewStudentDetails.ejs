@@ -3,6 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Details</title>
+  <link rel="icon" type="image/png" href="/images/edudrop.png">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
@@ -18,11 +19,9 @@
   <main class="main">
     <div class="main-text">
       <h2>Students Details</h2>
-        <br>
-        <p>Test data only</p>
         <div class="container pt-3">
         <table border="1" >
-          <thead>
+          
         <tr>
           <th>Student Name</th>
           <th>Father Name</th>
@@ -35,8 +34,6 @@
           <th>District</th>
           <th>Pin No</th>
         </tr>
-      </thead>
-      <tbody>
 
         <% for (var i = 0; i < schol.length; i++) { %>
           <tr>
@@ -45,19 +42,21 @@
             <td><%= schol[i].Class %></td>
             <td><%= schol[i].AadharNo %></td>
             <td><%= schol[i].Gender %></td>
-            <td><%= schol[i].Dob %></td>
+            <% let datestr =new Date(schol[i].Dob)%>
+            <td><%= datestr.toLocaleDateString() %></td>
             <td><%= schol[i].Caste %></td>
             <td><%= schol[i].State %></td>
             <td><%= schol[i].District %></td>
             <td><%= schol[i].Pin %></td>
           </tr>    
          <% } %>
-        </tbody>
+        
       </table>
+      <br>
       </div>
     </div>
   </main>
-
+  <footer-component></footer-component>
 </body>
 
 </html>
