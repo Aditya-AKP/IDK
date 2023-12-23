@@ -1,10 +1,10 @@
 # Student_Dropout_Analysis_System
-Pre-requisite:\n
+Pre-requisite:
 -> Have the npm package on your system, if not then install
 
 Downloading the Project:
 -> Go to GitHub and open "IDK" repo 
--> Click on the "Code" text which is in the green button\n
+-> Click on the "Code" text which is in the green button
 -> Then click on download zip 
 
 Setting Up the Project:
