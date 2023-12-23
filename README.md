@@ -1,16 +1,16 @@
-# IDK
-Pre-requisite:
+# Student_Dropout_Analysis_System
+Pre-requisite:\n
 -> Have the npm package on your system, if not then install
 
 Downloading the Project:
 -> Go to GitHub and open "IDK" repo 
--> Click on the "Code" text which is in the green button
+-> Click on the "Code" text which is in the green button\n
 -> Then click on download zip 
 
 Setting Up the Project:
 -> Extract the project at the desired location
--> Open "IDK" folder in vs code
--> Double check the folder which you have open, the root folder name should be "IDK"
+-> Open "Student_Dropout_Analysis_System" folder in vs code
+-> Double check the folder which you have open, the root folder name should be "Student_Dropout_Analysis_System"
 -> Open terminal in vs code 
 -> Execute the command 'npm install'
 -> Then wait until the package is installing
