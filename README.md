@@ -15,29 +15,29 @@ Setting Up the Project:
 -> Execute the command 'npm install'  
 -> Then wait until the package is installing  
 
-Running the Project:
--> Close all the background running terminals, if any
--> Then open a fresh terminal
--> Execute command 'node app.js'
--> Open Edge or Chrome browser
--> type 'http://localhost:3000/' in the top URL search bar
-and Booooom there you go ;)
+Running the Project:  
+-> Close all the background running terminals, if any  
+-> Then open a fresh terminal  
+-> Execute command 'node app.js'  
+-> Open Edge or Chrome browser  
+-> type 'http://localhost:3000/' in the top URL search bar  
+and Booooom there you go ;)  
 
-Closing the Project:
--> Go to terminal and press 'Ctrl+C' to stop the server
--> Delete the terminal
+Closing the Project:  
+-> Go to terminal and press 'Ctrl+C' to stop the server  
+-> Delete the terminal  
 
-Credentials:
+Credentials:  
 
-Admin Credentials:
-ID: admin
-Password: 100
+Admin Credentials:  
+ID: admin  
+Password: 100  
 
-Govt Credentials:
-Password: 100
+Govt Credentials:  
+Password: 100  
 
-School Credentials:
-ID: <any between the 1 to 20>
-Password: 123
+School Credentials:  
+ID: <any between the 1 to 20>  
+Password: 123  
 
-Enjoy :)
+Enjoy :)  
