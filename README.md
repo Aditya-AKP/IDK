@@ -1,11 +1,5 @@
 # Student_Dropout_Analysis_System
-Pre-requisite:  
--> Have the npm package on your system, if not then install
 
-Downloading the Project:  
--> Go to GitHub and open "IDK" repo   
--> Click on the "Code" text which is in the green button  
--> Then click on download zip  
 
 Setting Up the Project:  
 -> Extract the project at the desired location  
@@ -22,6 +16,8 @@ Running the Project:
 -> Open Edge or Chrome browser  
 -> type 'http://localhost:3000/' in the top URL search bar  
 and Booooom there you go ;)  
+
+NOTE :- All write operation is restricted due to security reasons.
 
 Closing the Project:  
 -> Go to terminal and press 'Ctrl+C' to stop the server  
